@@ -8,13 +8,60 @@
     tools:context=".Resultado_Conversao">
 
     <TextView
-        android:id="@+id/tv_teste"
+        android:id="@+id/tv_titulo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="100dp"
-        android:text="ESTOY AQUI"
-        android:textSize="18sp"
+        android:layout_marginTop="80dp"
+        android:text="Conversor de Medidas"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="O resultado da conversão é:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo2" />
+
+    <TextView
+        android:id="@+id/tv_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="780 gramas"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subt2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_peso"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_resultado">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_peso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:hint="Massa" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
