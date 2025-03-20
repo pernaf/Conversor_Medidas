@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Conversor_Medidas</string>
+    <string-array name="num_massa">
+        <item>Grama</item>
+        <item>Quilograma</item>
+        <item>Miligrama</item>
+    </string-array>
 </resources>

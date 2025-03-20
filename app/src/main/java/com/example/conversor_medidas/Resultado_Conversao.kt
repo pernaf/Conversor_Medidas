@@ -1,6 +1,7 @@
 package com.example.conversor_medidas
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.conversor_medidas.databinding.ActivityResultadoConversaoBinding
 
@@ -14,8 +15,14 @@ class Resultado_Conversao : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.tvTeste.text
-
+       val adapter =  ArrayAdapter.createFromResource(
+            this,
+            R.array.num_massa,
+            android.R.layout.simple_spinner_item
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinMassaEntrada.adapter = adapter
+        binding.spinMassaSaida.adapter = adapter
 
     }
 }
