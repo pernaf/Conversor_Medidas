@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">Conversor_Medidas</string>
     <string-array name="num_massa">
-        <item>Grama</item>
         <item>Quilograma</item>
+        <item>Grama</item>
         <item>Miligrama</item>
+    </string-array>
+    <string-array name="num_distancia">
+        <item>Quilômetro</item>
+        <item>Metro</item>
+        <item>Centímetro</item>
+    </string-array>
+    <string-array name="num_volume">
+        <item>Litro</item>
+        <item>Mililitro</item>
     </string-array>
 </resources>

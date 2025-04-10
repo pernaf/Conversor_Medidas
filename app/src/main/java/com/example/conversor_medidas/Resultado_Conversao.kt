@@ -17,6 +17,7 @@ class Resultado_Conversao : AppCompatActivity() {
 
         setContentView(binding.root)
 
+
        val adapter =  ArrayAdapter.createFromResource(
             this,
             R.array.num_massa,
@@ -27,6 +28,7 @@ class Resultado_Conversao : AppCompatActivity() {
         binding.spinMassaSaida.adapter = adapter
 
         var massaEntradaSelect = 0
+        var massaSaidaSelect = 0
         binding.spinMassaEntrada.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
 
@@ -37,12 +39,39 @@ class Resultado_Conversao : AppCompatActivity() {
                     id: Long
                 ) {
                     massaEntradaSelect = position
+                    massaSaidaSelect = position
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
 
                 }
             }
+
+        val adapter2 = ArrayAdapter.createFromResource(
+            this,
+            R.array.num_distancia,
+            android.R.layout.simple_spinner_item
+        )
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinDistanciaEntrada.adapter = adapter2
+        binding.spinDistanciaSaida.adapter = adapter2
+
+        val adapter3 = ArrayAdapter.createFromResource(
+            this,
+            R.array.num_volume,
+            android.R.layout.simple_spinner_item
+        )
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinVolumeEntrada.adapter = adapter3
+        binding.spinVolumeSaida.adapter = adapter3
+
+
+        binding.btnConverter.setOnClickListener {
+
+        }
+
+
+
 
 
 
