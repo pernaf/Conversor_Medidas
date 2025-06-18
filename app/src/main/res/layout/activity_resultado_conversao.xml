@@ -36,6 +36,7 @@
         android:textAlignment="center"
         android:text="0,00"
         android:textSize="32sp"
+        android:maxLength="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_subt2" />
@@ -139,6 +140,7 @@
             android:id="@+id/edt_distancia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="numberDecimal"
             android:hint="Comprimento" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -194,6 +196,7 @@
             android:id="@+id/edt_volume"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="numberDecimal"
             android:hint="Volume" />
     </com.google.android.material.textfield.TextInputLayout>
 
