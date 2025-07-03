@@ -10,7 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class Resultado_Conversao : AppCompatActivity() {
 
-    private lateinit var binding : ActivityResultadoConversaoBinding
+    private lateinit var binding: ActivityResultadoConversaoBinding
     private fun converterUnidade(
         valor: Double,
         de: Int,
@@ -30,7 +30,7 @@ class Resultado_Conversao : AppCompatActivity() {
         setContentView(binding.root)
 
 
-       val adapter =  ArrayAdapter.createFromResource(
+        val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.num_massa,
             android.R.layout.simple_spinner_item
@@ -99,7 +99,6 @@ class Resultado_Conversao : AppCompatActivity() {
             }
 
 
-
         val adapter3 = ArrayAdapter.createFromResource(
             this,
             R.array.num_volume,
@@ -146,15 +145,21 @@ class Resultado_Conversao : AppCompatActivity() {
             val distanciaPreenchida = distStr.isNotEmpty()
             val volumePreenchido = volStr.isNotEmpty()
 
-            val totalPreenchido = listOf(massaPreenchida, distanciaPreenchida, volumePreenchido).count { it }
+            val totalPreenchido =
+                listOf(massaPreenchida, distanciaPreenchida, volumePreenchido).count { it }
 
             if (totalPreenchido == 0) {
-                Snackbar.make(binding.root, "Digite um valor para converter", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(binding.root, "Digite um valor para converter", Snackbar.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 
             if (totalPreenchido > 1) {
-                Snackbar.make(binding.root, "Preencha apenas um campo por vez", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(
+                    binding.root,
+                    "Preencha apenas um campo por vez",
+                    Snackbar.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
 
@@ -165,7 +170,8 @@ class Resultado_Conversao : AppCompatActivity() {
                     massa, massaEntradaSelect, massaSaidaSelect,
                     unidades = listOf(1000.0, 1.0, 0.001) // Kg, g, mg
                 )
-                binding.tvResultado.text = "%.2f %s".format(resultado, binding.spinMassaSaida.selectedItem.toString())
+                binding.tvResultado.text =
+                    "%.2f %s".format(resultado, binding.spinMassaSaida.selectedItem.toString())
                 return@setOnClickListener
             }
 
@@ -175,7 +181,8 @@ class Resultado_Conversao : AppCompatActivity() {
                     distancia, distanciaEntradaSelect, distanciaSaidaSelect,
                     unidades = listOf(1000.0, 1.0, 0.01) // km, m, cm
                 )
-                binding.tvResultado.text = "%.2f %s".format(resultado, binding.spinDistanciaSaida.selectedItem.toString())
+                binding.tvResultado.text =
+                    "%.2f %s".format(resultado, binding.spinDistanciaSaida.selectedItem.toString())
                 return@setOnClickListener
             }
 
@@ -185,22 +192,23 @@ class Resultado_Conversao : AppCompatActivity() {
                     volume, volumeEntradaSelect, volumeSaidaSelect,
                     unidades = listOf(1.0, 0.001) // litro, ml
                 )
-                binding.tvResultado.text = "%.2f %s".format(resultado, binding.spinVolumeSaida.selectedItem.toString())
+                binding.tvResultado.text =
+                    "%.2f %s".format(resultado, binding.spinVolumeSaida.selectedItem.toString())
                 return@setOnClickListener
             }
 
         }
 
         binding.btnNvcalculo.setOnClickListener {
-            // Limpa os campos de entrada
+
             binding.edtPeso.text?.clear()
             binding.edtDistancia.text?.clear()
             binding.edtVolume.text?.clear()
 
-            // Limpa o resultado
+
             binding.tvResultado.text = ""
 
-            // Reseta os spinners para a primeira posição
+
             binding.spinMassaEntrada.setSelection(0)
             binding.spinMassaSaida.setSelection(0)
             binding.spinDistanciaEntrada.setSelection(0)
@@ -208,7 +216,6 @@ class Resultado_Conversao : AppCompatActivity() {
             binding.spinVolumeEntrada.setSelection(0)
             binding.spinVolumeSaida.setSelection(0)
 
-            // Feedback opcional para o usuário
             Snackbar.make(binding.root, "Novo cálculo iniciado", Snackbar.LENGTH_SHORT).show()
         }
     }
