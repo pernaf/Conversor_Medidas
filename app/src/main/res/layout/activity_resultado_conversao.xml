@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="O resultado da conversão é:"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo2" />
@@ -45,7 +46,12 @@
         android:id="@+id/input_peso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:boxStrokeColor="@color/textinput_custom"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_resultado">
@@ -130,9 +136,12 @@
         android:id="@+id/input_distancia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="92dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        app:boxStrokeColor="@color/textinput_custom"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_peso">
 
@@ -186,9 +195,12 @@
         android:id="@+id/input_volume"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="92dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        app:boxStrokeColor="@color/textinput_custom"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_distancia">
 
