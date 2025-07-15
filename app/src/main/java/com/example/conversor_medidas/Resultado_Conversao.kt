@@ -163,12 +163,15 @@ class Resultado_Conversao : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            fun parseValor(valorStr: String): Double {
+                return valorStr.replace(".", "").replace(",", ".").toDouble()
+            }
 
             if (massaPreenchida) {
-                val massa = massaStr.toDouble()
+                val massa = parseValor(massaStr)
                 val resultado = converterUnidade(
                     massa, massaEntradaSelect, massaSaidaSelect,
-                    unidades = listOf(1000.0, 1.0, 0.001) // Kg, g, mg
+                    unidades = listOf(1000.0, 1.0, 0.001)
                 )
                 binding.tvResultado.text =
                     "%.2f %s".format(resultado, binding.spinMassaSaida.selectedItem.toString())
@@ -176,10 +179,10 @@ class Resultado_Conversao : AppCompatActivity() {
             }
 
             if (distanciaPreenchida) {
-                val distancia = distStr.toDouble()
+                val distancia = parseValor(distStr)
                 val resultado = converterUnidade(
                     distancia, distanciaEntradaSelect, distanciaSaidaSelect,
-                    unidades = listOf(1000.0, 1.0, 0.01) // km, m, cm
+                    unidades = listOf(1000.0, 1.0, 0.01)
                 )
                 binding.tvResultado.text =
                     "%.2f %s".format(resultado, binding.spinDistanciaSaida.selectedItem.toString())
@@ -187,10 +190,10 @@ class Resultado_Conversao : AppCompatActivity() {
             }
 
             if (volumePreenchido) {
-                val volume = volStr.toDouble()
+                val volume = parseValor(volStr)
                 val resultado = converterUnidade(
                     volume, volumeEntradaSelect, volumeSaidaSelect,
-                    unidades = listOf(1.0, 0.001) // litro, ml
+                    unidades = listOf(1.0, 0.001)
                 )
                 binding.tvResultado.text =
                     "%.2f %s".format(resultado, binding.spinVolumeSaida.selectedItem.toString())
@@ -198,6 +201,7 @@ class Resultado_Conversao : AppCompatActivity() {
             }
 
         }
+
 
         binding.btnNvcalculo.setOnClickListener {
 

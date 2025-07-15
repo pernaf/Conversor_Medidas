@@ -14,6 +14,7 @@
         android:layout_marginTop="80dp"
         android:text="Conversor de Medidas"
         android:textSize="32sp"
+        android:fontFamily="@font/aclonica"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +62,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="numberDecimal"
-            android:maxLength="5"
             android:hint="Massa" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +118,7 @@
         android:layout_height="40dp"
         android:layout_margin="16dp"
         android:text="Converter"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent" />
@@ -128,6 +129,7 @@
         android:layout_height="40dp"
         android:layout_margin="16dp"
         android:text="Novo Cálculo"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
